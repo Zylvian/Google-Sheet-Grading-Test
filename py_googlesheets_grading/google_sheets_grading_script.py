@@ -39,24 +39,30 @@ class Grader:
         #SPREADSHEET_URL = spreadsheet_url
 
         if not spreadsheet_url:
-            SPREADSHEET_URL = input("Paste the link to your Google Sheets gradings: ")
+            SPREADSHEET_URL = str(input("Paste the link to your Google Sheets gradings: "))
         else:
             SPREADSHEET_URL = spreadsheet_url
 
-        return
-
-        # Create graded students file.
-        with open(GRADED_STUDENTS_FILE, 'w') as name_file:
-            name_file.write("GRADED STUDENTS: \n")
-            name_file.close()
+        if not SPREADSHEET_URL:
+            print("No URL given, closing down...")
+            return
 
         # Authorize pygsheets
         client = pygsheets.authorize()
         print("Authorized!")
 
         # Get grading sheet
-        grading_spreadsheet = client.open_by_url(SPREADSHEET_URL)
-        print("Got the spreadsheet!")
+        try:
+            grading_spreadsheet = client.open_by_url(SPREADSHEET_URL)
+            print("Got the spreadsheet!")
+        except pygsheets.exceptions.NoValidUrlKeyFound:
+            print("Couldn't find a valid spreadsheet, stopping script...")
+            return
+
+        # Create graded students file.
+        with open(GRADED_STUDENTS_FILE, 'w') as name_file:
+            name_file.write("GRADED STUDENTS: \n")
+            name_file.close()
 
         grading_sheets = grading_spreadsheet.worksheets()
 
