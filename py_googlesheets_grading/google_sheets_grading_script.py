@@ -6,7 +6,8 @@ from git import Repo
 import git
 
 class Grader:
-    def csv_converter(input_path, output_path):
+
+    def csv_converter(self, input_path, output_path):
         """
         Converts a comma delimited csv file to a tab delimited csv file.
         :param input_path:
@@ -31,7 +32,7 @@ class Grader:
         print("Conversion complete.")
 
 
-    def grade_students(spreadsheet_url=None):
+    def grade_students(self, spreadsheet_url=None):
 
         DONT_GRADE = ['ASD009','haa037', 'tny009']
         DO_GRADE = ['ekj008']
@@ -133,7 +134,7 @@ class Grader:
             # Converts the csv.
             input_path = curr_repo_path+'/' + commas_sheet_name + '.csv'
             output_path = curr_repo_path+'/' + finished_sheet_name +'.csv'
-            csv_converter(input_path=input_path, output_path=output_path)
+            self.csv_converter(input_path=input_path, output_path=output_path)
 
 
 
