@@ -87,7 +87,7 @@ class Grader:
             curr_repo_path = 'student_repos/'+student_id
             student_repo = Repo.init(curr_repo_path)
             try:
-                origin = student_repo.create_remote('origin', 'https://retting.ii.uib.no/' + student_id + '/inf101.v19.sem1')
+                origin = student_repo.create_remote('origin', 'https://retting.ii.uib.no/' + student_id + '/inf101.v19.sem2')
                 #origin = student_repo.create_remote('origin', 'https://retting.ii.uib.no/'+ student_id +'/python-pushing-est') # Testing purposes
 
             except git.exc.GitCommandError:
