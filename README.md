@@ -24,7 +24,7 @@ Grader().grade_students(spreadsheet_url="YOUR_URL")
 
 ### Options:
 
-The `grade_students` functions has some parameters.
+The `grade_students` function has some parameters.
 
 - `DO_GRADE=[]`: if you want to JUST grade one or two students, add this argument with a list of all the student IDs. I.e `Grader().grade_students(spreadsheet_url="YOUR_URL", DO_GRADE=["jwa015","asd069"])`
 
