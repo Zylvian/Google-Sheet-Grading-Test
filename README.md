@@ -7,18 +7,26 @@ Install:
 This will also install gsheets and its dependencies, notably httplib2 and oauth2client, as required dependencies.
 
 ## Quickstart
-Log into the Google Developers Console with the Google account whose spreadsheets you want to access. Create (or select) a project and enable the Drive API and Sheets API (under Google Apps APIs).
 
-Go to the **Credentials** for your project and create **New credentials > OAuth client ID >** of type **Other**. In the list of your OAuth 2.0 client IDs click Download JSON for the Client ID you just created. Save the file as `client_secret.json` in your home directory (user directory).
+To run this script, it needs access to your Google Sheets. To get this, it needs a `client_secret.json` file. Follow the tutorial below:
+https://pygsheets.readthedocs.io/en/latest/authorization.html
 
-Upon initial exectuion, follow the prompted terminal instructions.
-
+Save your `client_secret.json` file in the same directory as where you're going to run your script.
 
 Then run this in a Python script or terminal:
 
 ```
 from py_googlesheets_grading import Grader
 
-Grader().grade_students()
+Grader().grade_students(spreadsheet_url="YOUR_URL")
 
 ```
+
+### Options:
+
+The `grade_students` functions has some parameters.
+
+- `DO_GRADE=[]`: if you want to JUST grade one or two students, add this argument with a list of all the student IDs. I.e `Grader().grade_students(spreadsheet_url="YOUR_URL", DO_GRADE=["jwa015","asd069"])`
+
+- `DONT_GRADE=[]`: if there is anyone in your sheets you **don't** want to grade. It will grade everybody but those students. I.e
+`Grader().grade_students(spreadsheet_url="YOUR_URL", DONT_GRADE=["xdo033"])`
