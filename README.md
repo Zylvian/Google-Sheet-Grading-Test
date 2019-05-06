@@ -8,7 +8,7 @@ This will also install gsheets and its dependencies, notably gsheets (httplib2 a
 
 ## Quickstart
 
-To run this script, it needs access to your Google Sheets. To get this, it needs a `client_secret.json` file. Follow the tutorial below:
+To run this script, it needs access to your Google Sheets. To get this, it needs a `client_secret.json` file. Follow this tutorial:
 https://pygsheets.readthedocs.io/en/latest/authorization.html
 
 Save your `client_secret.json` file in the same directory as where you're going to run your script.
