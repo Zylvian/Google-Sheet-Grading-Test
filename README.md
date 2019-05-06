@@ -26,7 +26,8 @@ Grader().grade_students(spreadsheet_url="YOUR_URL")
 
 The `grade_students` function has some parameters.
 
-- `DO_GRADE=[]`: if you want to JUST grade one or two students, add this argument with a list of all the student IDs. I.e `Grader().grade_students(spreadsheet_url="YOUR_URL", DO_GRADE=["jwa015","asd069"])`
+- `DO_GRADE=[]`: if you want to JUST grade one or two students, add this argument with a list of all the student IDs you want to grade. It will skip everybody else.
+I.e `Grader().grade_students(spreadsheet_url="YOUR_URL", DO_GRADE=["jwa015","asd069"])`
 
 - `DONT_GRADE=[]`: if there is anyone in your sheets you **don't** want to grade. It will grade everybody but those students. I.e
 `Grader().grade_students(spreadsheet_url="YOUR_URL", DONT_GRADE=["xdo033"])`
