@@ -4,7 +4,7 @@
 Install:
 
 `$ pip install py_googlesheets_grading`
-This will also install gsheets and its dependencies, notably httplib2 and oauth2client, as required dependencies.
+This will also install gsheets and its dependencies, notably gsheets (httplib2 and oauth2client), as required dependencies.
 
 ## Quickstart
 
